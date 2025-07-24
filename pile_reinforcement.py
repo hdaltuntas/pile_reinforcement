@@ -11,7 +11,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 # AND APPROVAL OF A QUALIFIED STRUCTURAL ENGINEER.
 
 # ==============================================================================
-# SECTION 1: CALCULATION ENGINE (BACKEND)
+# SECTION 1: CALCULATION ENGINE 
 # ==============================================================================
 def get_material_properties(concrete_grade, steel_grade):
     fck_map = {"C25": 25, "C30": 30, "C35": 35, "C40": 40}
@@ -119,7 +119,6 @@ def calculate_shear_reinforcement(D, cover, tie_diameter, fcd, fctd, fck, fyk, V
 
 # ==============================================================================
 # SECTION 2: PLOTTING FUNCTIONS
-# (No changes in this section)
 # ==============================================================================
 def plot_final_design_on_canvas(fig, ax, M_k, N_k, loads, final_reinf_str):
     ax.clear(); ax.plot(M_k, N_k, color="blue"); ax.plot([-m for m in M_k], N_k, color="blue")
@@ -146,7 +145,7 @@ def draw_final_cross_section_on_canvas(fig, ax, D, cover, bar_diameter, num_bars
     fig.tight_layout(); fig.canvas.draw()
 
 # ==============================================================================
-# SECTION 3: TKINTER GUI CLASS (FRONTEND)
+# SECTION 3: TKINTER GUI CLASS 
 # ==============================================================================
 
 class PileDesignerApp(tk.Tk):
